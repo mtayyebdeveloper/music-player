@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+        integrity="sha512-rqQltXRuHxtPWhktpAZxLHUVJ3Eombn3hvk9PHjV/N5DMUYnzKPC1i3ub0mEXgFzsaZNeJcoE0YHq0j/GFsdGg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="webfonts/fa-brands-400.ttf">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="webfonts/fa-brands-400.woff2">
+</head>
+
+<body>
+    <header class="header-top">
+        <div class="player-logo">M T <font color="aqua">Developer</font>
+        </div>
+        <i class="fa-solid fa-bars" id="navopen-icon"></i>
+    </header>
+    <div id="nav-bar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="audios.html">Audio songs</a></li>
+            <li><a href="videos.html">Video songs</a></li>
+            <li><a href="#">About this player</a></li>
+            <li><a href="#">Settings</a></li>
+            <br>
+            <br>
+            <li style="color: white;">&copy; by M Tayyeb Developer -- 2023 <br> "Music player"</li>
+        </ul>
+    </div>
+    <main>
+        <video src="videos/Hue_Bechain__Ek_Haseena_Thi_Ek_Deewana_Tha__Music_-_Nadeem,_Palak_Muchhal__Yasser_Desai(360p).mp4" id="videos" controls></video>
+        <div class="vitems">
+            <i class="fa-solid fa-backward" id="vbackward"></i>
+            <i class="fa-solid fa-forward" id="vforward"></i>
+        </div>
+    </main>
+    <script>
+        // navbar open functions
+        let navopenicon = document.getElementById("navopen-icon");
+        let navbar = document.getElementById("nav-bar");
+        let b =true;
+
+        navopenicon.addEventListener("click", () => {
+            if (b) {
+                navbar.style.display = "block";
+                b =false;
+            } else {
+                navbar.style.display = "none";
+                b =true;
+            }
+        });
+
+        // videos songs functions
+        let videos = document.getElementById("videos");
+        let vforwardbtn = document.getElementById("vforward");
+        let vbackwardbtn = document.getElementById("vbackward");
+
+        let allvideos = [
+            {
+                videoname: "aj blu hy pane pane"
+            },
+            {
+                videoname: "Hangover_Full_Video_Song__Kick__Salman_Khan,_Jacqueline_Fernandez__Meet_Bros_Anjjan(360p)"
+            },
+            {
+                videoname: "arbic song"
+            },
+            {
+                videoname: "Hue_Bechain__Ek_Haseena_Thi_Ek_Deewana_Tha__Music_-_Nadeem,_Palak_Muchhal__Yasser_Desai(360p)"
+            },
+            {
+                videoname: "Larsha_Pekhawar__Ali_Zafar_ft._Gul_Panra_&_Fortitude_Pukhtoon_Core__Pashto_Song(360p)"
+            },
+            {
+                videoname: "Kheech_Meri_Photo_Official_Video_Song__Sanam_Teri_Kasam__Harshvardhan,_Mawra__Himesh_Reshammiya(480p)"
+            },
+            {
+                videoname: "New Songs WaYou Yema Ustkh"
+            },
+            {
+                videoname: "Main_Aaya_Hoon_Tere_Dar_Pe.....(480p)"
+            },
+            {
+                videoname: "Meri_Zindagi_Hai_Tu_Full_Video__Satyameva_Jayate_2__John_A,_Divya_K__Rochak_ft_Jubin,_Neeti(360p)"
+            },
+            {
+                videoname: "Ploua - XZEEZ Remix (Baby Driver)  DJ Twista"
+            },
+            {
+                videoname: "Qayamat_Se_Pehle_Qayamat_Hai_Yaaro_-_New_Sad_Song_2018_-_Urdu_Love_Lines-_Heart_-_broken_Song(360p)"
+            },
+            {
+                videoname: "Rab_Na_Kare_Ke_Ye_Zindagi_Kabhi_Kisi_Ko_Daga_De__Heart_Broken_Love_Story__New_Hindi_Sad_Song_2022(360p)"
+            },
+            {
+                videoname: "Yeh_Banday_Mitti_kay_Banday__One_Year_of_Zarb_e_Azb_(ISPR_Official_Video)(360p)"
+            },
+            {
+                videoname: "Tere_Sang_Yaara_Song_(4K_Video)_Asim_Korean_Ft._Atif_Aslam__Dhvani_Bhanushali(360p)"
+            },
+            {
+                videoname: "Sidhu_Moose_Wala_Mashup_–_DJ_Shadow_Dubai_&_VDJ_Mahe_–_Musical_Tribute(360p)"
+            },
+            {
+                videoname: "Satisfya_-_I_am_a_Rider__Imran_Khan__Card_Thief_Story__Now_You_See_Me_2_Scene__Gaddi_Lamborghini(360p)"
+            },
+        ];
+
+        let loadvideos = (allvideos) => {
+            videos.src = "videos/" + allvideos.videoname + ".mp4";
+        };
+        let videosindex = 0;
+
+        let videoforword = () => {
+            videosindex = (videosindex + 1) % allvideos.length;
+            loadvideos(allvideos[videosindex]);
+            videos.play();
+        }
+        let videobackward =()=>{
+            videosindex =(videosindex -1 + allvideos.length) % allvideos.length;
+            loadvideos(allvideos[videosindex]);
+            videos.play();
+        }
+        vforwardbtn.addEventListener("click", videoforword);
+        vbackwardbtn.addEventListener("click", videobackward);
+    </script>
+</body>
+
+</html>

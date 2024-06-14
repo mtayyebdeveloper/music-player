@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music player</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    integrity="sha512-rqQltXRuHxtPWhktpAZxLHUVJ3Eombn3hvk9PHjV/N5DMUYnzKPC1i3ub0mEXgFzsaZNeJcoE0YHq0j/GFsdGg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="webfonts/fa-brands-400.ttf">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="webfonts/fa-brands-400.woff2">
+</head>
+
+<body>
+  <header class="header-top">
+    <div class="player-logo">M T <font color="aqua">Developer</font>
+    </div>
+    <i class="fa-solid fa-bars" id="navopen-icon"></i>
+  </header>
+  <div id="nav-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="audios.html">Audio songs</a></li>
+      <li><a href="videos.html">Video songs</a></li>
+      <li><a href="#">About this player</a></li>
+      <li><a href="#">Settings</a></li>
+      <br>
+      <br>
+      <li style="color: white;">&copy; by M Tayyeb Developer -- 2023 <br> "Music player"</li>
+    </ul>
+  </div>
+  <section class="main-sec">
+    <div class="about-developer">
+      <div class="about">
+        <h1>M Tayyeb Developer</h1>
+        <h3>This is app is develop by M Tayyeb Developer</h3>
+        <h3>I am a Web Developer</h3>
+        <button class="about-btn"><a href="#">Learn more...</a></button>
+      </div>
+      <div class="about-img">
+        <img src="img/Picsart_23-05-18_14-01-10-875.jpg">
+      </div>
+    </div>
+    
+  </section>
+  <script>
+    // navbar open functions
+    let navopenicon = document.getElementById("navopen-icon");
+    let navbar = document.getElementById("nav-bar");
+    let b =true;
+
+    navopenicon.addEventListener("click", () => {
+      if (b) {
+        navbar.style.display = "block";
+        b =false;
+      } else {
+        navbar.style.display = "none";
+        b =true;
+      }
+    });
+  </script>
+</body>
+
+</html>

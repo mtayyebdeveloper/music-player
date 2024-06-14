@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" integrity="sha512-rqQltXRuHxtPWhktpAZxLHUVJ3Eombn3hvk9PHjV/N5DMUYnzKPC1i3ub0mEXgFzsaZNeJcoE0YHq0j/GFsdGg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="webfonts/fa-brands-400.ttf">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="webfonts/fa-brands-400.woff2">
+</head>
+<body>
+    <header class="header-top">
+        <div class="player-logo">M T <font color="aqua">Developer</font></div>
+        <i class="fa-solid fa-bars" id="navopen-icon"></i>
+    </header>
+    <!-- this is menu -->
+    <div id="nav-bar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="audios.html">Audio songs</a></li>
+            <li><a href="videos.html">Video songs</a></li>
+            <li><a href="#">About this player</a></li>
+            <li><a href="#">Settings</a></li>
+            <br>
+            <br>
+            <li style="color: white;">&copy; by M Tayyeb Developer -- 2023 <br> "Music player"</li>
+        </ul>
+    </div>
+    <main>
+        <audio src="audeos/dil ko karar.mp3" id="music"></audio>
+        <h2 id="name" style="padding: 40px 0;">Dil ko karar aya</h2>
+        <img src="img/halo.jpg" id="imgs" alt="">
+    </main>
+    <div class="items">
+        <i class="fa-solid fa-backward" id="backward"></i>
+        <i class="fa-solid fa-play" id="playicon"></i>
+        <i class="fa-solid fa-forward" id="forward"></i>
+    </div>
+    <footer>
+
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
